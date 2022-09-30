@@ -1,11 +1,14 @@
 package com.isabelafelix.desafiocrud.service;
 
+import com.isabelafelix.desafiocrud.dto.ClientDto;
 import com.isabelafelix.desafiocrud.entities.ClientEntity;
 import com.isabelafelix.desafiocrud.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ClientService {
@@ -16,9 +19,12 @@ public class ClientService {
     private ClientRepository repository;
 
     //ACESSAR O REPOSITORY E CHAMAR NO BANCO DE DADOS OS CLIENTES
-    public List<ClientEntity> findAll(){
-        //METODO RETORNA O REPOSITORY
-        return repository.findAll();
+    @Transactional(readOnly = true)
+
+    public List<ClientDto> findAll(){
+        List<ClientEntity> clientEntityList = repository.findAll();
+
+        return clientEntityList.stream().map(ClientDto::new).collect(Collectors.toList());
 
     }
 }
