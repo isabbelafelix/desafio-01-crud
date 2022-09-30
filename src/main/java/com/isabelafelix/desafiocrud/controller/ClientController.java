@@ -15,7 +15,7 @@ import java.util.List;
 public class ClientController {
 
     @GetMapping
-    public ResponseEntity<List<ClientEntity>> findAll(){
+    public ResponseEntity<List<ClientEntity>> findAll() {
         //DECLARAR UMA LISTA DO TIPO CLIENTENTITY E INSTANCIAR
         List<ClientEntity> clientEntityList = new ArrayList<>();
 
