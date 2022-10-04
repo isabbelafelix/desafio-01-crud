@@ -8,23 +8,28 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
 public class ClientService {
 
     //INJETAR O REPOSITORY DENTRO DO SERVICE
-    //PRECISA DE UMA DEPENDENCIA COM O REPOSITORY
     @Autowired
     private ClientRepository repository;
 
-    //ACESSAR O REPOSITORY E CHAMAR NO BANCO DE DADOS OS CLIENTES
     @Transactional(readOnly = true)
-
     public List<ClientDto> findAll(){
         List<ClientEntity> clientEntityList = repository.findAll();
 
-        return clientEntityList.stream().map(ClientDto::new).collect(Collectors.toList());
+        return clientEntityList.stream().map(x -> new ClientDto(x)).collect(Collectors.toList());
+    }
 
+    @Transactional(readOnly = true)
+    public ClientDto findById(Long id) {
+        Optional<ClientEntity> entity = repository.findById(id);
+        ClientEntity client = entity.get();
+
+        return new ClientDto(client);
     }
 }
