@@ -1,1 +1,12 @@
-INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Isabela', '053.333.133-15', 3000, null, 2);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Isabela', '053.333.133-15', 2560, '1993-10-21T00:00:00.0Z', 0);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Mariana', '257.222.133-15', 1500, '1999-12-19T00:00:00.0Z', 5);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Monaliza', '896.879.133-15', 900, '1960-01-27T00:00:00.0Z', 4);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Flora', '458.333.657-15', 3658, '2015-07-01T00:00:00.0Z', 2);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Daenerys', '852.258.133-15', 9857, '2000-02-11T00:00:00.0Z', 2);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Aegon', '369.987.133-15', 1254, '1978-08-17T00:00:00.0Z', 1);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Luke', '963.412.133-15', 987, '1888-03-23T00:00:00.0Z', 3);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Rhaenyra', '357.236.133-15', 3658, '1987-11-08T00:00:00.0Z', 2);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Viserys', '456.896.133-15', 7895, '1962-04-20T00:00:00.0Z', 10);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Daemon', '654.478.133-15', 2547, '1971-06-11T00:00:00.0Z', 5);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Arya', '852.589.133-15', 3658, '2002-09-29T00:00:00.0Z', 6);
+INSERT INTO tb_client(name, cpf, income, birth_date, children) VALUES ('Baela', '258.587.133-15', 1478, '2021-07-08T00:00:00.0Z', 2);

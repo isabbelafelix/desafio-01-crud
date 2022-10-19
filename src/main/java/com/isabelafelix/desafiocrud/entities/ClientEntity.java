@@ -20,6 +20,7 @@ public class ClientEntity implements Serializable {
     private String name;
     private String cpf;
     private Double income;
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant birthDate;
     private Integer children;
 
@@ -71,8 +72,8 @@ public class ClientEntity implements Serializable {
         return birthDate;
     }
 
+
     public void setBirthDate(Instant birthDate) {
-        this.birthDate = birthDate;
     }
 
     public Integer getChildren() {
@@ -81,6 +82,10 @@ public class ClientEntity implements Serializable {
 
     public void setChildren(Integer children) {
         this.children = children;
+    }
+
+    public void prePersist(){
+        birthDate = Instant.now();
     }
 
     @Override
